@@ -11,66 +11,44 @@
 #define pfd(n) printf("%lf ", n);
 #define pfc(ch) printf("%c ", ch);
 #define pfs(s) printf("%s ", s);
+#define sff(f) sf("%f", &f);
+#define sfn(f) sf("%d", &n);
+#define sfc(ch) sf("%c", &ch);
+#define sfs(s) sf("%s", &s);
 #define fl float
 #define dd double
 #define sz(x) (int)x.size();
 #define max(a, b) a>b?a:b
 #define min(a, b) a>b?b:a
-#define inf while(1)
+#define INF while(1)
 #define WHL(i, n) while(i<n)
 #define FOR(i, s, e, c) for(i=(s);i<(e); i+=(c))
-#define br break
-#define cnt continue
+#define BR break;
+#define CNT continue;
 #define _ pfs(" ");
+#define PER(n, p) (n*(p/100.0))
 //#define EACH(x, ar) for(auto& (x) : (ar))
-int ar[100];
-int top = -1;
-VD push(int);
-VD pop();
-VD show();
-VD peek();
 int main()
 {
-	inf{
-		
-	}
-	return 0;
-}
-VD show(){
-	int i;
-	if(top==-1){
-		pf("stack underflow");
-	}else{
-		FOR(i, top, 0, -1){
-			pfn(ar[i]);
+	char ch;
+	sfc(ch)
+	if(ch>=65&&ch<=122){
+		if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'){
+			pfs("vowel")
+		}else{
+			pfs("consonent")
 		}
-	}
-	nl;
-}
-VD push(int n){
-	if(top==99){
-		pf("stack overflow");
 	}else{
-		ar[++top] = n;
-		pfn(n);pf("has been pushed");
-	}
-	nl;
-}
-VD pop(){
-	if(top==-1){
-		pf("stack underflow");
-	}else{
-		top--;
-		pfn(ar[top]);
-		pf("has been popped");
-	}
-	nl;
-}
-VD peek(){
-	if(top==-1){
-		pf("stack underflow");
-	}else{
-		pfn(ar[top]);
+		pfs("not an alphabet")
 	}
 }
+//int n;
+//	fl time;
+//	sfn(n)
+//	sff(time)
+//	if(time==2){
+//		pff(PER(time, 50)+time)
+//	}else{
+//		pff(time*time)
+//	}
 
