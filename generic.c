@@ -5,7 +5,7 @@
 #define pf printf
 #define pb push_back
 #define pfn(n) printf("%d ", n);
-#define ln printf("\n");
+#define nl printf("\n");
 #define pff(n) printf("%f ", n);
 #define pfd(n) printf("%lf ", n);
 #define pfc(ch) printf("%c ", ch);
@@ -15,17 +15,19 @@
 #define sz(x) (int)x.size();
 #define max(a, b) a>b?a:b
 #define min(a, b) a>b?b:a
+#define inf while(1)
+#define WHL(i, n) while(i<n)
 #define FOR(i, s, e, c) for(i=(s);i<(e); i+=(c))
 //#define EACH(x, ar) for(auto& (x) : (ar))
 int main()
 {
 	char str[10][10] = {"lskjdf", "slkdfj", "sldkjf"};
-	int n, i, j;
+	int n, i=1, j;
 	sf("%d", &n);
 	int ar[n];
-	FOR(i, 1, 6, 1){
+	WHL(i, 11){
 		pfn(i);
-		ln;
+		i++;
 	}
 	return 0;
 }
