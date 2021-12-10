@@ -70,16 +70,24 @@ VD delFirst(struct Node **head){
 VD delLast(struct node **head){
 	if(head==NULL) return;
 	struct Node *temp = *head;
+	if(temp->next==NULL){
+		temp = NULL;
+		free(temp);
+		return;
+	}
 	WHL(temp->next->next!=NULL){
 		temp = temp->next;
 	}
 	temp->next = NULL;
 	free(temp->next);
 }
+VD reverseList(struct Node *head){
+	
+}
 VD print(struct Node **head){
 	struct Node *cur = *head;
 	WHL(cur!=NULL){
-		pfn(cur->val) _
+		pf("[%d]->", cur->val);
 		cur = cur->next;
 	}
 }

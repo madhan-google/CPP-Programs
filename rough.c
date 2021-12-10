@@ -38,24 +38,7 @@
 static int x = 5;
 int main()
 {
-//	int r, c, n;
-//	scanf("%d %d %d", &r, &c, &n);
-//	if( (1<=n&&r>=n) || (r*c>=n&&(r*c)-r+1<=n) || (n%r==0) ){
-//		printf("yes");
-//	}else{
-//		printf("no");
-//	}
-	int i, j, count = 1, r = 1;
-	FOR(i, 1, 6, 1){
-		r = i;
-		count = 0;
-		FOR(j, 1, 6, 1){
-			count+=r;
-			pfn(count) _
-		}
-		r++;
-		nl
-	}
+	pf("%c", (65-26));
 }
 
 
