@@ -37,6 +37,7 @@
 #define isnot !=
 #define $ auto
 //#define EACH(x, ar) for(auto& (x) : (ar))
+int mx;
 struct Node{
 	int val;
 	struct Node* right;
@@ -115,6 +116,9 @@ int main()
 	pfs(search(root,0)==1?"found":"not found");
 	nl
 //	list<int> li;
+	mx = -1;
+	findMax(root);
+	pfn(mx);
 }
 
 
