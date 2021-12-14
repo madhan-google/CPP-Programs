@@ -36,9 +36,16 @@
 #define $ auto
 //#define EACH(x, ar) for(auto& (x) : (ar))
 static int x = 5;
+long long int fact(int n){
+	long long int i, f = 1;
+	for(i=1; i<=n; i++) f*= i;
+	printf("\n%d - %lld", n, f);
+	return f;
+}
 int main()
 {
-	pf("%c", (65-26));
+	int n = 50;
+	printf("\n%lld", (fact(n)/fact(n-3)));
 }
 
 
