@@ -37,7 +37,7 @@
 #define isnot !=
 #define $ auto
 //#define EACH(x, ar) for(auto& (x) : (ar))
-int mx;
+//int mx;
 struct Node{
 	int val;
 	struct Node* right;
@@ -88,21 +88,32 @@ int search(struct Node *root, int target){
 	if(root->val==target) return 1;
 	return search(root->left, target) || search(root->right, target);
 }
-VD findMax(struct Node *root){
-	if(root!=NULL){
-		mx = max(mx, root->val);
-		findMax(root->left);
-		findMax(root->right);
-	}
+int findMax(struct Node *root){
+	struct Node* cur = root;
+//	int mx = cur->val;
+	WHL(cur!=NULL) cur = cur->right;
+	return cur->val;
+}
+int height(struct Node* root){
+	if(root==NULL) return 0;
+	int l = height(root->left);
+	int r = height(root->right);
+	return l>r?l+1:r+1;
+}
+int diameter(struct Node* root){
+	if(root==NULL) return 0;
+	return 1 + (height(root->left) + height(root->right));
 }
 int main()
 {
 	struct Node* root = NULL;
+	root = insert(root, 9);
+	root = insert(root, 11);
 	root = insert(root, 1);
 	root = insert(root, 2);
 	root = insert(root, 5);
+	root = insert(root, 20);
 	root = insert(root, 6);
-	root = insert(root, 9);
 	root = insert(root, 3);
 	root = insert(root, 4);
 	root = insert(root, 10);
@@ -116,9 +127,7 @@ int main()
 	pfs(search(root,0)==1?"found":"not found");
 	nl
 //	list<int> li;
-	mx = -1;
-	findMax(root);
-	pfn(mx);
+	pf("diameter : %d", diameter(root));
 }
 
 
