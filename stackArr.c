@@ -60,7 +60,7 @@ void display(){
 	}else{
 		int i;
 		for(i=top; i>=0; --i){
-			printf("\n%d", st[i]);
+			printf("\n[ %d ]", st[i]);
 		}
 	}
 }

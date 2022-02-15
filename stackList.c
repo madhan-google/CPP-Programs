@@ -15,7 +15,7 @@ int main(){
 		scanf("%d", &ch);
 		switch(ch){
 			case 1:
-				printf("\n enter number : ");
+				printf("\nenter number : ");
 				scanf("%d", &num);
 				push(num);
 				break;
@@ -46,17 +46,29 @@ void push(int n){
 }
 void pop(){
 	struct Node *temp = top;
+	if(temp==NULL){
+		printf("stack under flow");
+		return;
+	}
 	printf("\n%d has been popped", temp->val);
 	top = top->next;
 	free(temp);
 }
 void peek(){
+	if(top==NULL){
+		printf("stack under flow");
+		return;
+	}
 	printf("peek element is : %d", top->val);
 }
 void display(){
 	struct Node *cur = top;
+	if(cur==NULL){
+		printf("stack under flow");
+		return;
+	}
 	while( cur != NULL ){
-		printf("%d -> ", cur->val);
+		printf("[ %d ]\n", cur->val);
 		cur = cur->next;
 	}
 }

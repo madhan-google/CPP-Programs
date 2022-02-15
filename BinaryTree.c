@@ -42,12 +42,30 @@ struct Node{
 	struct Node *left;
 	struct Node *right;
 };
+struct Node* create(int val){
+	struct Node *newnode = (struct Node*)malloc(sizeof(struct Node));
+	newnode->val = val;
+	newnode->left = NULL;
+	newnode->right = NULL;
+	return newnode;
+}
 VD preorder(struct Node *root){
-	if(root!=NULL){
-		printf("%d ", root->val);
-		preorder(root->left);
-		preorder(root->right);
-	}
+	if(root==NULL) return;
+	printf("%d ", root->val);
+	preorder(root->left);
+	preorder(root->right);
+}
+void inorder(struct Node *root){
+	if(root==NULL) return;
+	inorder(root->left);
+	printf("%d ", root->val);
+	inorder(root->right);
+}
+void postorder(struct Node* root){
+	if(root==NULL) return;
+	postorder(root->left);
+	postorder(root->right);
+	printf("%d ", root->val);
 }
 VD findMax(struct Node *root){
 	if(root!=NULL){
@@ -61,17 +79,17 @@ int main()
 	struct Node *root;
 	root = (struct Node*)malloc(sizeof(struct Node));
 	root->val = 1;
-	root->left->val = 2;
-	root->right->val = 3;
-	root->left->left->val = 4;
-	root->left->right->val = 5;
-	root->right->left->val = 6;
-	root->right->right->val = 7;
-	preorder(root);
+	root->left = create(2);
+	root->right = create(3);
+	root->left->left = create(4);
+	root->left->right = create(5);
+	root->right->left = create(6);
+	root->right->right = create(8);
+	postorder(root);
 //	pfn(root->left->left->val);
 	mx = -1;
-	findMax(root);
-	pfn(mx);
+//	findMax(root);
+//	pfn(mx);
 }
 
 

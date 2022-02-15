@@ -35,34 +35,40 @@
 #define is ==
 #define isnot !=
 #define $ auto
-//#define ULLD long long int 
-#define LLD long long int
-LLD res, temp;
-void dfs(LLD start, LLD n){
-    if(n==0){
-    	printf("%lld\n", temp);
-        res = min(res, temp);
-        return;
-    }
-    LLD i;
-    for(i=start; i<=9; i++){
-        if(n-i>=0){
-            temp = temp * 10 + i;
-            dfs(i+1, n-i);
-            temp /= 10;
-        }
-    }
-}
-int main(){
-    LLD n, mod, count = 0;
-    scanf("%lld", &n);
-	mod = n%9;
-	LLD res = mod;
-	count = n/9;
-	while(count-->0){
-		res = res * 10 + 9;
+//#define EACH(x, ar) for(auto& (x) : (ar))
+int partition(int ar[], int s, int e){
+	int pivot = ar[e];
+	int i, pind = s;
+	for(i=s; i<e; i++){
+		if(ar[i]<=pivot){
+			int t = ar[i];
+			ar[i] = ar[pind];
+			ar[pind] = t;
+			pind++;
+		}
 	}
-	printf("%lld", res);
+	int t = ar[e];
+	ar[e] = ar[pind];
+	ar[pind] = t;
+	return pind;
+}
+VD sort(int ar[], int s, int e){
+	if(s>=e) return;
+//	int mid = (s+e)/2;
+	int pind = partition(ar, s, e);
+	sort(ar, s, pind-1);
+	sort(ar, pind+1, e);
+}
+int main()
+{
+	$ n;
+	sfn(n)
+	$ ar[n], i, j;
+	FOR(i, 0, n, 1) sfn(ar[i])
+	sort(ar, 0, n-1);
+	FOR(i, 0, n, 1){
+		pfn(ar[i]) _
+	}
 }
 
 

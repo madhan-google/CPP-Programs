@@ -35,34 +35,18 @@
 #define is ==
 #define isnot !=
 #define $ auto
-//#define ULLD long long int 
-#define LLD long long int
-LLD res, temp;
-void dfs(LLD start, LLD n){
-    if(n==0){
-    	printf("%lld\n", temp);
-        res = min(res, temp);
-        return;
-    }
-    LLD i;
-    for(i=start; i<=9; i++){
-        if(n-i>=0){
-            temp = temp * 10 + i;
-            dfs(i+1, n-i);
-            temp /= 10;
-        }
-    }
-}
-int main(){
-    LLD n, mod, count = 0;
-    scanf("%lld", &n);
-	mod = n%9;
-	LLD res = mod;
-	count = n/9;
-	while(count-->0){
-		res = res * 10 + 9;
+//#define EACH(x, ar) for(auto& (x) : (ar))
+int main()
+{
+	int n;
+	sfn(n)
+	long int rev = 0, pow = 31, i;
+	while(n>0){
+		rev += (n&1)<<pow;
+		n >>= 1;
+//		pow--;
 	}
-	printf("%lld", res);
+	pfn(rev)
 }
 
 

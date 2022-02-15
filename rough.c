@@ -34,27 +34,34 @@
 #define and &&
 #define isnot !=
 #define $ auto
-//#define EACH(x, ar) for(auto& (x) : (ar))
-int check(int n){
-	int s = sqrt(n);
-	return (s*s==n)?1:0;
-}
+//%[^\n]%*c
 int main()
 {
-	int n;
-	scanf("%d", &n);
+	int T;
+	scanf("%d", &T);
 	int i;
-	int flag = 1;
-	for(i=2; i<=n/2; i++) if(n%i==0) printf("%d ", i);
-	nl
-	for(i=2; i<=n/2; i++){
-		if(n%i==0&&check(i)){
-			flag = 0;
-			break;
+	FOR(i, 1, T+1, 1){
+		char str[10000];
+		scanf("%s", str);
+		// pfs(str);
+		int len = strlen(str);
+		char ch = str[len-1];
+		if(ch=='y'){
+			nl
+			pf("Case #%d: %s is ruled by nobody.", i, str);
+		}else if(ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u' or ch=='A' or ch=='E' or ch=='I' or ch=='O' or ch=='U'){
+			nl
+			pf("Case #%d: %s is ruled by Alice.", i, str);
+		}else{
+			nl
+			pf("Case #%d: %s is ruled by Bob.", i, str);
 		}
 	}
-	printf("%s", flag==0?"not square free number":"square free number");
+	return 0;
 }
+
+	
+	
 
 
 
