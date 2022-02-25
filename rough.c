@@ -35,39 +35,22 @@
 #define isnot !=
 #define $ auto
 //%[^\n]%*c
+
 int main()
 {
-	int T;
-	scanf("%d", &T);
-	int i;
-	FOR(i, 1, T+1, 1){
-		char str[10000];
-		scanf("%s", str);
-		// pfs(str);
-		int len = strlen(str);
-		char ch = str[len-1];
-		if(ch=='y'){
-			nl
-			pf("Case #%d: %s is ruled by nobody.", i, str);
-		}else if(ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u' or ch=='A' or ch=='E' or ch=='I' or ch=='O' or ch=='U'){
-			nl
-			pf("Case #%d: %s is ruled by Alice.", i, str);
-		}else{
-			nl
-			pf("Case #%d: %s is ruled by Bob.", i, str);
+	char str[100];
+	scanf("%s", str);
+	int n = strlen(str);
+	for(int i=0; i<n; i++){
+		for(int j=i+1; j<n; j++){
+			if(str[i]>str[j]){
+				char t =str[i];
+				str[i]=str[j];
+				str[j]=t;
+			}
 		}
 	}
+	
+	printf("%s",str);
 	return 0;
 }
-
-	
-	
-
-
-
-
-
-
-
-
-
