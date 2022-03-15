@@ -47,18 +47,8 @@ int main(){
         addEdge(S, E);
     }
     show(v);
-    printf("\n");
+    printf("\nBFS Traversal: ");
     bfs(0, v);
     return 0;
 }
-// 5
-// 8
-// 0 1
-// 0 3 
-// 1 2
-// 1 3 
-// 2 4
-// 2 3
-// 3 4
-// 4 0
 

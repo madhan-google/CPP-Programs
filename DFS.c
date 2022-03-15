@@ -20,12 +20,14 @@ int main(){
     int v, e;
     printf("enter the number of vertices and edges: ");
     scanf("%d %d", &v, &e);
+    printf("enter the source vertex and destination vertex: ");
     for(int i=0; i<e; i++){
         int S, E;
         scanf("%d %d", &S, &E);
         addEdge(S, E);
     }
     show(v);
+    printf("\nDFS Traversal: ");
     dfs(0, v);
     return 0;
 }
