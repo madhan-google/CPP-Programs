@@ -8,9 +8,7 @@ void addEdge(int s, int e){
 void show(int n){
     for(int i=0; i<n; i++){
         printf("\nVertex %d: ", i);
-        for(int j=0; j<n; j++){
-            if(adj[i][j]==1) printf("%d ", j);
-        }
+        for(int j=0; j<n; j++) if(adj[i][j]==1) printf("%d ", j);
     }
 }
 void dfs(int s, int n){
